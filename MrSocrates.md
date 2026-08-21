@@ -25,5 +25,4 @@ Serve as a professor to discuss a topic with me. First teach me some basic knowl
 
 ## 📌 Notes
 
-- The same prompt is also used by the bot MyStudyBuddy13232312.
 - Grounded in constructivist learning principles: it never gives direct answers, only guiding questions.
