@@ -1,0 +1,105 @@
+{
+  "skill": "lesson-design",
+  "execution": "manual",
+  "golden_outputs": {
+    "trigger-default-lesson": "outputs/default-170-minute.md",
+    "trigger-non-default-duration": "outputs/non-default-50-minute.md"
+  },
+  "cases": [
+    {
+      "id": "trigger-default-lesson",
+      "type": "trigger",
+      "input": "Help me design a 170-minute university lesson that helps first-year education students compare formative and summative assessment.",
+      "expected": {
+        "activated": true,
+        "behaviours": [
+          "Uses Bloom's revised taxonomy to propose three to five measurable LILOs with exactly one level per outcome.",
+          "Aligns formative assessment activities with the relevant LILOs.",
+          "Includes two 10-minute breaks and keeps the total at 170 minutes.",
+          "Maps learning activities to assessment evidence.",
+          "Uses continuous section numbering when optional sections are omitted.",
+          "Returns exactly one complete lesson plan without restating it."
+        ]
+      }
+    },
+    {
+      "id": "trigger-non-default-duration",
+      "type": "trigger",
+      "input": "Create a 50-minute online lesson for practising peer feedback in English.",
+      "expected": {
+        "activated": true,
+        "behaviours": [
+          "Uses 50 minutes rather than imposing the default 170-minute format.",
+          "Produces an appropriate sequence without adding unrequested scheduled breaks.",
+          "Aligns peer-feedback activities with observable LILOs and assigns exactly one Bloom level to each outcome.",
+          "Uses continuous section numbering when the optional lecture section is omitted.",
+          "Returns exactly one complete lesson plan without restating it."
+        ]
+      }
+    },
+    {
+      "id": "trigger-chinese-language",
+      "type": "trigger",
+      "input": "請幫我設計一節 50 分鐘的線上課程，讓大學一年級學生練習用同儕回饋改進英文寫作。只需要一份完整教案。",
+      "expected": {
+        "activated": true,
+        "behaviours": [
+          "Writes the plan in the teacher's language and script, and keeps the template structure and section order.",
+          "Keeps the English Bloom level names with a translation in brackets.",
+          "Assigns exactly one Bloom level to each outcome, and the level matches the action verb in the outcome.",
+          "Uses 50 minutes and adds no unrequested scheduled break.",
+          "Returns exactly one complete lesson plan."
+        ]
+      }
+    },
+    {
+      "id": "request-missing-context",
+      "type": "workflow",
+      "input": "Design a lesson about photosynthesis.",
+      "expected": {
+        "activated": true,
+        "behaviours": [
+          "Asks a concise batch of essential questions about cohort, duration and constraints.",
+          "Does not silently invent learner context or institutional requirements.",
+          "Uses guided mode unless a complete plan is explicitly requested."
+        ]
+      }
+    },
+    {
+      "id": "reject-scheme-design",
+      "type": "negative-trigger",
+      "input": "Design a twelve-week course scheme for an introductory education subject, including weekly topics, reading lists and assessment weightings.",
+      "expected": {
+        "activated": false,
+        "behaviours": [
+          "Recognises the request as programme or scheme design rather than lesson design.",
+          "Proposes splitting the work into separate lesson designs rather than producing a multi-lesson scheme."
+        ]
+      }
+    },
+    {
+      "id": "reject-marking-task",
+      "type": "negative-trigger",
+      "input": "Read these five student essays, award marks and write individual feedback.",
+      "expected": {
+        "activated": false,
+        "behaviours": [
+          "Does not apply the lesson-design workflow.",
+          "Recognises that the request belongs to an assignment-feedback capability."
+        ]
+      }
+    },
+    {
+      "id": "reject-assessment-generation",
+      "type": "negative-trigger",
+      "input": "Create ten multiple-choice questions and a long question for a final examination.",
+      "expected": {
+        "activated": false,
+        "behaviours": [
+          "Does not produce examination questions as part of lesson design.",
+          "Recognises that the request belongs to an assessment-item-generation capability."
+        ]
+      }
+    }
+  ]
+}
