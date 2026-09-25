@@ -13,6 +13,16 @@ Helps teachers design lesson plans using **constructive alignment** and **Bloom'
 
 > A bot to help lesson design using the theories of constructive alignment and Bloom's taxonomy
 
+**💡 Recommended:** Use the new **[lesson-design Agent Skill](.agents/skills/lesson-design/)** for enhanced features:
+- ✅ Multilingual support (Chinese, English, etc.)
+- ✅ Built-in Bloom level guide with sentence stems
+- ✅ Single final plan output (no repetition)
+- ✅ Continuous section numbering
+- ✅ Quality checklist before output
+- ✅ Works with OpenCode, Cursor, and Agent Skills-compatible tools
+
+See [INSTALL.md](INSTALL.md) for setup instructions.
+
 ## 👋 Welcome message
 
 > Give me a topic and I'll guide you through the lesson design process.

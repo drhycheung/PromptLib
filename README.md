@@ -1,6 +1,52 @@
 # 📚 PromptLib
 
-A collection of education-oriented AI chatbot prompts by [@drhycheung](https://poe.com/profile/drhycheung).
+A collection of education-oriented AI chatbot prompts and Agent Skills by [@drhycheung](https://poe.com/profile/drhycheung).
+
+## 🤖 Agent Skills (recommended)
+
+Agent Skills are structured, reusable prompts that work with AI coding assistants like [OpenCode](https://opencode.ai), [Cursor](https://cursor.sh), and other Agent Skills-compatible tools.
+
+### ✨ Available Skills
+
+| Skill | Purpose | Language | Agent Skill |
+|---|---|---|---|
+| 📝 LessonDesigner | Guided lesson design (LILOs → assessment → activities → plan) | Multilingual | [`.agents/skills/lesson-design/`](.agents/skills/lesson-design/) |
+
+### 📦 Installation
+
+**Option 1: Clone the repository**
+```bash
+git clone https://github.com/drhycheung/PromptLib.git
+cd PromptLib
+# Agent Skills in .agents/skills/ are ready to use
+```
+
+**Option 2: Copy specific skills**
+Copy the `.agents/skills/lesson-design/` folder to your project:
+```bash
+mkdir -p your-project/.agents/skills
+cp -r PromptLib/.agents/skills/lesson-design your-project/.agents/skills/
+```
+
+**Option 3: Submodule (for teams)**
+```bash
+git submodule add https://github.com/drhycheung/PromptLib.git skills/PromptLib
+ln -s skills/PromptLib/.agents/skills/lesson-design .agents/skills/lesson-design
+```
+
+See [INSTALL.md](INSTALL.md) for detailed installation instructions.
+
+### 🔗 Legacy & Source Documents
+
+Each Agent Skill has a corresponding legacy prompt file. Both versions work — the Agent Skill adds structured error handling, language adaptation, and quality checks.
+
+| Agent Skill | Legacy Prompt | Notes |
+|---|---|---|
+| [`lesson-design`](.agents/skills/lesson-design/) | [LessonDesigner.md](LessonDesigner.md) | Agent Skill adds Chinese language support, Bloom level guide, single-output enforcement, continuous numbering |
+
+---
+
+## 💬 Legacy Chatbot Prompts (Poe / Gemini / ChatGPT)
 
 These bots were originally built on Poe. Since Poe has reduced the number of free daily credits, they are now being migrated to Gemini.
 
